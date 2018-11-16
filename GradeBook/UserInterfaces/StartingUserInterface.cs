@@ -41,11 +41,11 @@ namespace GradeBook.UserInterfaces
             var name = parts[1];
             //BaseGradeBook gradeBook = new BaseGradeBook(name);
             BaseGradeBook gradeBook;
-            if (parts[3] == "standard")
+            if (parts[2] == "standard")
             {
                 gradeBook = new StandardGradeBook(name);
             }
-            else if (parts[3] == "ranked")
+            else if (parts[2] == "ranked")
             {
                 gradeBook = new StandardGradeBook(name);
             }
