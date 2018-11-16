@@ -47,5 +47,18 @@ namespace GradeBook.GradeBooks
                 }
             }
         }
+
+        public override void CalculateStatistics()
+        {
+            if(Students.Count < 5)
+            {
+                Console.WriteLine("Ranked-grading requires a minimum of 5 students to work");
+            }
+            else
+            {
+                base.CalculateStatistics();
+
+            }
+        }
     }
 }
