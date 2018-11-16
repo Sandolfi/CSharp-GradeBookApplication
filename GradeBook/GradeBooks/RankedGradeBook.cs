@@ -21,22 +21,23 @@ namespace GradeBook.GradeBooks
             else
             {
 
-                var dropLetterGrade = (int)Math.Ceiling(Students.Count * 0.2);
-                var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
-                if(grades[dropLetterGrade -1] <= averageGrade)
+                var dropGrade = (int)Math.Round(Students.Count * 0.2);
+                var aveGrade = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
+
+                if(aveGrade[dropGrade - 1] <= averageGrade)
                 {
                     return 'A';
                 }
-                else if(grades[dropLetterGrade * 2 - 1] <= averageGrade)
+                else if(aveGrade[dropGrade * 2 - 1] <= averageGrade)
                 {
                     return 'B';
                 
                 }
-                else if(grades[dropLetterGrade * 3 - 1] <= averageGrade)
+                else if(aveGrade[dropGrade * 3 - 1] <= averageGrade)
                 {
                     return 'C';
                 }
-                else if(grades[dropLetterGrade * 4 - 1] <= averageGrade)
+                else if(aveGrade[dropGrade * 4 - 1] <= averageGrade)
                 {
                     return 'D';
                 }
@@ -45,8 +46,6 @@ namespace GradeBook.GradeBooks
                     return 'F';
                 }
             }
-
-            //return base.GetLetterGrade(averageGrade);
         }
     }
 }
